@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 49%);
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 15px;
+  color: darken($color: #fff, $amount: 10);
+}
+
+button {
+  cursor: pointer;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  // overflow: hidden;
+  background: url("../images/bg-intro-desktop.png") no-repeat center
+    center/cover;
+  background-color: $red;
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1140px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .inner-container {
+      flex: 1;
+      padding: 20px;
+
+      .title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 25px;
+      }
+      .subtitle {
+      }
+      .box {
+        background: #fff;
+        margin-top: 20px;
+        width: 100%;
+        padding: 20px;
+        border-radius: 0.5rem;
+        box-shadow: 0 8px rgba($color: #000000, $alpha: 0.2);
+        &.box-blue {
+          font-size: 15px;
+          font-weight: 100;
+          background-color: $blue;
+          color: #fff;
+        }
+        .main-form {
+          padding: 15px 20px;
+          .form-control {
+            position: relative;
+            input {
+              width: 100%;
+              // font-size: 1rem;
+              font-weight: 600;
+              padding: 15px 25px;
+              border: 1px solid $grayish-blue;
+              color: $dark-blue;
+              border-radius: 0.5rem;
+              margin: 12px 0;
+              &:focus {
+                border: 1px solid $blue;
+              }
+            }
+            small {
+              text-align: right;
+              margin-top: -10px;
+              display: none;
+            }
+            &::after {
+              content: url(../images/icon-error.svg);
+              position: absolute;
+              right: 15px;
+              top: 0;
+              transform: translateY(75%);
+              display: none;
+            }
+            &.error {
+              input {
+                border: 1px solid $red;
+              }
+              small {
+                display: block;
+                color: $red;
+              }
+              &::after {
+                display: block;
+              }
+            }
+          }
+          button {
+            background-color: $green;
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            // font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px rgba($color: #000000, $alpha: 0.4);
+            color: #fff;
+            text-transform: uppercase;
+          }
+          .policy {
+            display: block;
+            margin-top: 15px;
+            color: $grayish-blue;
+            a {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
+  .subtitle {
+    text-align: center;
+  }
+}
